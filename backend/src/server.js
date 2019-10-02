@@ -1,7 +1,14 @@
 const express = require('express');
 const routes = require('./routes');
+const mongoose =  require('mongoose');
 
-const app = express();
+// get, put, post delçete
+
+const app = express(); // Cria a aplicação
+mongoose.connect('mongodb+srv://GustavoLeao2018:oliveira18@cluster0-alt9r.mongodb.net/banco?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}); // Conecta no banco
 
 // req.query  = acessar mquery params (ex localhost/users?idade=33) para filtros
 // req.params = acessarm route params para ediçao e delite 
